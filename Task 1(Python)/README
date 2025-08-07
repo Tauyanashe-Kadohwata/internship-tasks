@@ -1,1 +1,60 @@
 
+Student and Room Data Analysis
+
+Project Description
+This is a Python-based project that processes student and room data from JSON files. It creates a relational database schema, loads the data, and performs several analytical queries to extract meaningful insights. The final results can be outputted in either JSON or XML format via a command-line interface.
+
+Key Features
+Database Integration: Uses Python's sqlite3 module for database operations, demonstrating how to connect, create tables, and execute SQL queries without an ORM.
+
+Data Loading: Efficiently loads data from two JSON files (rooms.json and students.json) into the database.
+
+Analytical Queries: Executes four distinct analytical queries to find:
+
+The number of students in each room.
+
+The 5 rooms with the lowest average student age.
+
+The 5 rooms with the greatest age difference among students.
+
+A list of rooms where students of different genders live.
+
+Query Optimization: Includes SQL statements to add indexes on relevant columns (room_id, birthday, sex) to optimize query performance.
+
+Output Flexibility: Supports two output formats (JSON and XML) based on user input.
+
+Command-Line Interface (CLI): Provides a simple CLI to specify the input files and desired output format.
+
+Object-Oriented Design: The code is structured using an OOP approach, with classes for DatabaseManager, DataLoader, QueryExecutor, and DataSerializer to adhere to SOLID principles.
+
+How to Run
+Clone the Repository: git clone [your-repository-url]
+
+Create a Virtual Environment: python -m venv venv
+
+Activate the Environment:
+
+macOS/Linux: source venv/bin/activate
+
+Windows: venv\Scripts\activate
+
+Install Dependencies: pip install pandas lxml
+
+Run the Script:
+
+For JSON output: python process_data.py --students "students (1).json" --rooms "rooms (1).json" --format json
+
+For XML output: python process_data.py --students "students (1).json" --rooms "rooms (1).json" --format xml
+
+Project Decomposition
+(This is to address the Jira ticket requirement. You can make this its own section.)
+
+The project was broken down into the following key tasks:
+
+Task 1: Set up the development environment and create the database schema.
+
+Task 2: Implement a data loader to read JSON files and populate the database.
+
+Task 3: Write and test the four required analytical SQL queries.
+
+Task 4: Create classes for data serialization (JSON/XML) and build the main CLI.
